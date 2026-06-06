@@ -1,0 +1,111 @@
+AmigaAMP-Isometric v1.0c
+======================
+
+Build environment:
+- MSYS on Windows
+- AmigaGCC / m68k-amigaos-gcc in PATH
+
+Compile:
+
+cd /pfad/zum/ordner/AmigaAMP-Isometric
+make clean
+make
+
+If your AmigaGCC setup does not support -noixemul, remove -noixemul from CFLAGS and LDFLAGS in the Makefile.
+
+Result:
+- AmigaAMP-Isometric
+
+Install / use:
+- Copy the binary to your AmigaAMP plugins/tools location
+- Start it while AmigaAMP is already running
+- The plugin opens a borderless fullscreen window on the current Workbench/Public Screen
+- It uses the active RTG/Picasso96 Workbench resolution automatically
+- ESC or Ctrl-C exits the plugin
+
+Visualizer details:
+- Isometric 16x16 tower field
+- 16 frequency bands across the X axis
+- 16 history slices into the Z/depth axis
+- colour ramp from blue to green to yellow/orange/red
+- top centered metadata lines, without visible plugin header title
+- binary-visible credit string:
+  AmigaAmp Isometric by Andreas 'Andiweli' Stuermer
+
+Final v1.0 font order:
+- Tahoma
+- Verdana
+- TrebuchetMS
+- Arial
+
+For these fonts:
+- line 1 size 18
+- line 2+ size 16
+
+Fallback:
+- NewTopaz 8 / 8 / 8
+- TOPAZ/topaz.font 8 / 8 / 8
+
+
+v1.0 changes:
+- restored v1.0 text content behaviour
+- first visible line is again the previous TitleLine content (ID3title or TrackInfoText)
+- first visible line now uses MainFont size 18 for Tahoma/Verdana/TrebuchetMS/Arial
+- second line uses TitleFont size 16 for those fonts
+- no constructed Artist - Title line
+
+
+v1.0 changes:
+- moved both visible text lines one text line lower
+- text content stays identical to v1.0
+- font order and sizes stay unchanged
+
+
+v1.0 changes:
+- moved the whole isometric tower field about two rows lower
+- more realtime-style level response
+- prefers SampleRaw for low latency
+- spectrum data remains fallback
+- 50 FPS frame timer
+- faster attack, controlled release
+
+
+v1.0 changes:
+- latency trim for the remaining 250-400 ms perceived lag
+- frame timer changed to 60 FPS / 16.6 ms
+- rising levels now use immediate attack
+- falling levels still use controlled smoothing
+- peak hold shortened slightly
+- SampleRaw/spectrum behaviour otherwise remains unchanged
+
+
+v1.0 changes:
+- clean latency trim without DirectDraw flicker
+- keeps flicker-free backbuffer rendering
+- frame timer set to 60 FPS / 16.6 ms
+- SampleRaw analysis now uses the newest half of the sample block
+- small capped transient component for earlier visible peaks
+- intended to reduce the remaining 250-400 ms perceived delay without overdriving levels
+
+
+v1.0 changes:
+- red impulse control
+- average level gain reduced slightly
+- transient boost reduced and capped lower
+- soft top limiter added above level 205
+- red remains reachable for very strong peaks, but normal impulses should no longer always hit red
+- clean sync / backbuffer behaviour remains unchanged
+
+
+v1.0 changes:
+- red impulse control from previous build remains active
+- falling bars now use a spring/damped release feel
+- rising attacks remain immediate for sync with music
+- small velocity buffer added per bar
+- clean backbuffer rendering remains active, no DirectDraw flicker
+
+
+Final v1.0 cleanup:
+- version set to 1.0 without suffix letter
+- source/binary credit uses Stuermer instead of Stürmer
+- credit text: AmigaAmp Isometric by Andreas 'Andiweli' Stuermer

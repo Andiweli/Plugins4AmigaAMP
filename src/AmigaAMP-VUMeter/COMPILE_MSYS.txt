@@ -1,0 +1,93 @@
+AmigaAMP-VUMeter v1.0 - MSYS/AmigaGCC Build
+===========================================
+
+Ordnername und Binary:
+AmigaAMP-VUMeter
+
+Kompilieren unter MSYS/AmigaGCC:
+
+cd /pfad/zum/ordner/AmigaAMP-VUMeter
+make clean
+make
+
+Das erzeugte Programm heißt:
+AmigaAMP-VUMeter
+
+Verwendung:
+1. AmigaAMP starten.
+2. Musik abspielen.
+3. AmigaAMP-VUMeter starten.
+4. ESC beendet das Plugin.
+   Ctrl-C aus der Shell beendet es ebenfalls.
+
+Finaler Stand v1.0:
+- schwarzer Hintergrund, graue Hintergrundblöcke entfernt
+- aktive grün/gelb/orange/rote VU-Balken
+- Farbverlauf: grün bis etwa Mitte, danach gelb, orange, rot
+- rote Peak-Hold-Marker
+- Pegelverhalten aus v0.7/v0.8/v0.9:
+  - SampleRaw-basierter Low-Latency-Pfad
+  - kein v0.6-Dauerrot-Verhalten
+  - Balken enden ca. 3 Reihen unter der vorherigen Maximalhöhe
+- Tracktext wie AmigaAMP-Isometric:
+  - Zeile 1 = ID3title, sonst TrackInfoText, sonst AmigaAMP
+  - Zeile 2 = ID3artist
+  - Textblock eine Zeile tiefer
+- Schriftfolge:
+  - Tahoma
+  - Verdana
+  - TrebuchetMS
+  - Arial
+- bei diesen Fonts: Zeile 1 Größe 18, Zeile 2 Größe 16
+- Fallback: NewTopaz 8/8/8
+- danach: TOPAZ/topaz.font 8/8/8
+- Binary-Credit:
+  AmigaAmp VUMeter by Andreas 'Andiweli' Stuermer
+
+Hinweis:
+Das Plugin öffnet keinen eigenen Picasso96-Screen.
+Es nutzt den aktuellen Workbench/Public Screen als Vollbildfenster.
+Damit wird automatisch die aktuell eingestellte P96/RTG-Workbench-Auflösung verwendet.
+
+Falls dein AmigaGCC -noixemul nicht unterstützt, entferne -noixemul aus CFLAGS und LDFLAGS im Makefile.
+
+
+v1.0 changes:
+- latency trim for the remaining 250-400 ms perceived lag
+- frame timer changed to 60 FPS / 16.6 ms
+- rising levels now use immediate attack
+- falling levels still use controlled smoothing
+- peak hold shortened slightly
+- SampleRaw/spectrum behaviour otherwise remains unchanged
+
+
+v1.0 changes:
+- clean latency trim without DirectDraw flicker
+- keeps flicker-free backbuffer rendering
+- frame timer set to 60 FPS / 16.6 ms
+- SampleRaw analysis now uses the newest half of the sample block
+- small capped transient component for earlier visible peaks
+- intended to reduce the remaining 250-400 ms perceived delay without overdriving levels
+
+
+v1.0 changes:
+- red impulse control
+- average level gain reduced slightly
+- transient boost reduced and capped lower
+- soft top limiter added above level 205
+- red remains reachable for very strong peaks, but normal impulses should no longer always hit red
+- clean sync / backbuffer behaviour remains unchanged
+
+
+v1.0 changes:
+- red impulse control from previous build remains active
+- falling bars now use a spring/damped release feel
+- rising attacks remain immediate for sync with music
+- small velocity buffer added per bar
+- clean backbuffer rendering remains active, no DirectDraw flicker
+
+
+Final v1.0 cleanup:
+- version set to 1.0 without suffix letter
+- source/binary credit uses Stuermer instead of Stürmer
+- credit text: AmigaAmp VUMeter by Andreas 'Andiweli' Stuermer
