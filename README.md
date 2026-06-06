@@ -12,9 +12,14 @@ Fullscreen visualizer plugins for **AmigaAMP** on **AmigaOS 3.x / RTG / Picasso9
 
 Classic VU meter style visualizer with smooth green/yellow/orange/red bars and red peak markers.
 
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/3b653cd5-6f9f-4d80-9d94-3c88bc4fc7d3" />
+
 ### AmigaAMP-Isometric
 
 Isometric 16x16 spectrum tower visualizer with a blue-to-red color ramp.
+
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/e883799c-17c8-4bc7-bd2a-7bf1e81c9abc" />
+
 
 ## 🖥️ Display
 
