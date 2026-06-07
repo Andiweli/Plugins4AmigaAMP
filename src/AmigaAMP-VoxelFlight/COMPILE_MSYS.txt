@@ -1,0 +1,44 @@
+AmigaAMP-VoxelFlight v1.0 - MSYS/AmigaGCC Build
+================================================
+
+Ordnername und Binary:
+AmigaAMP-VoxelFlight
+
+Kompilieren unter MSYS/AmigaGCC:
+
+cd /pfad/zum/ordner/AmigaAMP-VoxelFlight
+make clean
+make
+
+Das erzeugte Programm heißt:
+AmigaAMP-VoxelFlight
+
+Verwendung:
+1. AmigaAMP starten.
+2. Musik abspielen.
+3. AmigaAMP-VoxelFlight starten.
+4. ESC beendet das Plugin.
+   Ctrl-C aus der Shell beendet es ebenfalls.
+
+Finaler Stand v1.0:
+- Pseudo-Voxel-/Heightfield-Flug über eine Mars-/Planetenlandschaft
+- Landschaft läuft auf den Betrachter zu
+- links/rechts abgerundete, auslaufende Planetenkurve
+- einzelne voxelartige Hügel statt flacher Fläche
+- Musik hebt sichtbare Hügel über LiveLevel[] an
+- stabile Musik-zu-Pegel-Logik aus VUMeter/Isometric übernommen
+- SampleRaw newest-half Analyse: stabiler als das fragile newest-1/8-Experiment
+- keine DirectDraw-Flackerpfade
+- keine Runtime-Logging-/Debugausgaben
+- sauberer Backbuffer bleibt aktiv
+- Tracktext/Fontlogik wie bei den fertigen Plugins
+- aktueller Workbench/Public Screen wird genutzt, ideal mit RTG/Picasso96
+
+Credit / $VER:
+AmigaAMP-VoxelFlight 1.0 AmigaAmp VoxelFlight by Andreas 'Andiweli' Stuermer (07.06.2026)
+
+Hinweis:
+Das Plugin öffnet keinen eigenen Picasso96-Screen.
+Es nutzt den aktuellen Workbench/Public Screen als Vollbildfenster.
+
+Falls dein AmigaGCC -noixemul nicht unterstützt, entferne -noixemul aus CFLAGS und LDFLAGS im Makefile.
