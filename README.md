@@ -3,6 +3,8 @@
 ![OS](https://img.shields.io/badge/OS-AmigaOS-blue)
 ![AI assisted](https://img.shields.io/badge/AI-assisted%20Coding-white)
 ![GFX](https://img.shields.io/badge/GFX-RTG%2FP96%20needed-orange)
+[![Support via PayPal](https://img.shields.io/badge/Support%20via-PayPal-0070BA?logo=paypal\&logoColor=white)](https://paypal.me/andiweli)
+
 
 Fullscreen visualizer plugins for **AmigaAMP** on **AmigaOS 3.x / RTG / Picasso96**.
 
@@ -59,6 +61,16 @@ make
 * AmigaAMP
 * RTG/Picasso96 recommended
 * AmigaGCC for building from source
+
+## ❤️ Support
+
+If you enjoy this project and would like to support my work, you can make a small contribution via PayPal.
+
+Your support helps me spend more time maintaining existing projects, fixing bugs, improving compatibility, and working on new features.
+
+[![Support via PayPal](https://img.shields.io/badge/Support%20via-PayPal-0070BA?logo=paypal\&logoColor=white)](https://paypal.me/andiweli)
+
+Thank you for your support!
 
 ## 👤 Credits
 
